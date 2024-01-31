@@ -12,8 +12,13 @@ module.exports = function (RED) {
         node.status({fill: 'green', shape: 'dot', text: 'active'});
 
         node.on('input', function (msg) {
+           
+         if(msg.communicationPort == "" || msg.communicationPort == null){
+
             var randNum = Math.floor(Math.random() * 7100);
             msg.communicationPort = 47808 + randNum;
+  
+          } 
 
             if (msg.interface === "" || msg.interface === null) {
                 msg.interface = "0.0.0.0";
