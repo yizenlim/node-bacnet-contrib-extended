@@ -24,20 +24,21 @@ module.exports = function(RED) {
 
           //console.log("msg.communicationPort 0 ---> ", msg.communicationPort);
 
-          var randNum = Math.floor(Math.random() * 7100);
-          msg.communicationPort = 47808 + randNum;
+          // var randNum = Math.floor(Math.random() * 7100);
+          // msg.communicationPort = 47808 + randNum;
 
 
 
-          // if(msg.communicationPort == "" || msg.communicationPort == null){
+          if(msg.communicationPort == "" || msg.communicationPort == null){
 
-          //   var randNum = Math.floor(Math.random() * 7100);
-          //   msg.communicationPort = 47808 + randNum;
+            var randNum = Math.floor(Math.random() * 7100);
+            msg.communicationPort = 47808 + randNum;
 
-          //   console.log("msg.communicationPort ---> ", msg.communicationPort);
+            console.log("msg.communicationPort ---> ", msg.communicationPort);
 
-          // }
+          }
   
+          
           if(msg.interface == "" || msg.interface == null){
   
             msg.interface = "0.0.0.0";
